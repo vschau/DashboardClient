@@ -1,7 +1,7 @@
-<app-navbar (toggleSideBarChanged)="onToggleSideBar()"></app-navbar>
+<app-navbar (toggleSideBarChanged)="sidenav.toggle()"></app-navbar>
 
 <mat-drawer-container>
-  <mat-drawer mode="side" [opened]="sideBarOpen" fxLayout="column">
+  <mat-drawer #sidenav mode="side" opened="true">
     <app-sidebar></app-sidebar>
   </mat-drawer>
   <mat-drawer-content>
