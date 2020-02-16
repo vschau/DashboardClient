@@ -1,6 +1,5 @@
-Test
-<!-- <mat-grid-list cols="3">
-  <mat-grid-tile>
+<div fxLayout fxLayout.xs="column" fxLayoutAlign="space-between" fxLayoutWrap="wrap">
+  <div fxFlex>
     <mat-card>
       <mat-card-title>
         <h5>Daily Orders</h5>
@@ -9,9 +8,8 @@ Test
         <app-bar-chart></app-bar-chart>
       </mat-card-content>
     </mat-card>
-  </mat-grid-tile>
-
-  <mat-grid-tile>
+  </div>
+  <div fxFlex>
     <mat-card>
       <mat-card-title>
         <h5>Orders by Customer</h5>
@@ -20,9 +18,8 @@ Test
         <app-pie-chart></app-pie-chart>
       </mat-card-content>
     </mat-card>
-  </mat-grid-tile>
-  
-  <mat-grid-tile>
+  </div>
+  <div fxFlex>
     <mat-card>
       <mat-card-title>
         <h5>Orders by State</h5>
@@ -31,16 +28,17 @@ Test
         <app-pie-chart></app-pie-chart>
       </mat-card-content>
     </mat-card>
-  </mat-grid-tile>
-  
-  <mat-grid-tile colspan="3">
-    <mat-card class="card-bottom">
+  </div>
+</div>
+<div fxLayout fxLayout.xs="column" fxLayoutAlign="start" fxLayoutWrap="wrap">
+  <div fxFlex="100%">
+    <mat-card>
       <mat-card-title>
         <h5>Monthly Sales by Product</h5>
       </mat-card-title>
       <mat-card-content>
         <app-line-chart></app-line-chart>
       </mat-card-content>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list> -->
+    </mat-card>  
+  </div>
+</div>

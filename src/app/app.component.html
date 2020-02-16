@@ -1,15 +1,14 @@
-<div class="container" fxLayout="column">
-  <mat-toolbar color="primary">
-    <app-navbar></app-navbar>
-  </mat-toolbar>
+<mat-toolbar color="primary">
+  <app-navbar></app-navbar>
+</mat-toolbar>
 
-  <mat-drawer-container>
-    <mat-drawer class="sidebar" #sidenav mode="side" opened="true">
+<div style="height: calc(100vh - 64px);">
+  <mat-drawer-container fxFlexFill>
+    <mat-drawer #sidenav mode="side" opened="true">
       <app-sidebar></app-sidebar>
     </mat-drawer>
-    <mat-drawer-content>
-      <!-- <div style="height: 88vh;"> -->
-      <div style="height: 100%;">
+    <mat-drawer-content fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex style="height: 100%;">
         <router-outlet></router-outlet>
       </div>
     </mat-drawer-content>
