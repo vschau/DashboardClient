@@ -1,4 +1,12 @@
-<mat-toolbar-row>
-  <span class="logo logo-left">ng</span>
-  <span class="logo logo-right">Sight</span>
-</mat-toolbar-row>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="toggleSideBar()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    
+    <div>
+      <span class="logo logo-left">ng</span>
+      <span class="logo logo-right">Sight</span>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
