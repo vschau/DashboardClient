@@ -1,0 +1,28 @@
+.card-block {
+  width: 200px;
+  height: 200px;
+  font-size: 1.3em;
+  text-align: center;
+  padding: 0 20px;
+  margin: 20px;
+  align-items: center;
+}
+
+.card-title {
+  padding: 5px;
+  /* background-color: #00BCD4; */
+}
+
+.card-content {
+  margin: auto 0;
+}
+
+.card-footer {
+  margin: auto 0 10px 0;
+}
+
+.card-button {
+  background-color: lightgray;
+  color: #000;
+  min-width: 100px;
+}

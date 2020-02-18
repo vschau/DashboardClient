@@ -7,7 +7,7 @@ import { ChartsModule } from 'ng2-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule, MatSidenavModule, MatGridListModule, MatListModule, MatCardModule,
-         MatButtonModule, MatIconModule } from '@angular/material';
+         MatButtonModule, MatIconModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -17,6 +17,7 @@ import { SessionSalesComponent } from './sessions/session-sales/session-sales.co
 import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
 import { LineChartComponent } from './charts/line-chart/line-chart.component';
 import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
+import { ServerComponent } from './server/server.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
     SessionSalesComponent,
     BarChartComponent,
     LineChartComponent,
-    PieChartComponent
+    PieChartComponent,
+    ServerComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,10 @@ import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
     MatListModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

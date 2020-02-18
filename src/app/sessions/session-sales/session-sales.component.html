@@ -1,49 +1,51 @@
-<div fxLayout="column" fxFlexFill>
-  <div fxFlex style="margin: 0 20px 0 20px">
-    <div fxLayout fxLayout.lt-md="column" fxLayoutAlign="center" fxLayoutGap="20px" fxLayoutWrap="wrap">
-      <div fxFlex="33.33" fxFlex.lt-md="1">
-        <mat-card>
-          <mat-card-title>
-            <h5>Daily Orders</h5>
-          </mat-card-title>
-          <mat-card-content>
-            <app-bar-chart></app-bar-chart>
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <div fxFlex="33.33" fxFlex.lt-md="1">
-        <mat-card>
-          <mat-card-title>
-            <h5>Orders by Customer</h5>
-          </mat-card-title>
-          <mat-card-content>
-            <app-pie-chart></app-pie-chart>
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <div fxFlex="33.33" fxFlex.lt-md="1">
-        <mat-card>
-          <mat-card-title>
-            <h5>Orders by State</h5>
-          </mat-card-title>
-          <mat-card-content>
-            <app-pie-chart></app-pie-chart>
-          </mat-card-content>
-        </mat-card>
+<div>
+  <div fxLayout="column" fxFlexFill>
+    <div fxFlex style="margin: 0 20px 0 20px">
+      <div fxLayout fxLayout.lt-md="column" fxLayoutAlign="center" fxLayoutGap="20px" fxLayoutWrap="wrap">
+        <div fxFlex="33.33" fxFlex.lt-md="1">
+          <mat-card>
+            <mat-card-title>
+              <h5>Daily Orders</h5>
+            </mat-card-title>
+            <mat-card-content>
+              <app-bar-chart></app-bar-chart>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div fxFlex="33.33" fxFlex.lt-md="1">
+          <mat-card>
+            <mat-card-title>
+              <h5>Orders by Customer</h5>
+            </mat-card-title>
+            <mat-card-content>
+              <app-pie-chart></app-pie-chart>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div fxFlex="33.33" fxFlex.lt-md="1">
+          <mat-card>
+            <mat-card-title>
+              <h5>Orders by State</h5>
+            </mat-card-title>
+            <mat-card-content>
+              <app-pie-chart></app-pie-chart>
+            </mat-card-content>
+          </mat-card>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- <mat-divider></mat-divider> -->
-
-  <div fxFlex style="margin: 0 20px 0 20px">
-    <mat-card>
-      <mat-card-title>
-        <h5>Monthly Sales by Product</h5>
-      </mat-card-title>
-      <mat-card-content>
-        <app-line-chart></app-line-chart>
-      </mat-card-content>
-    </mat-card>
+  
+    <!-- <mat-divider></mat-divider> -->
+  
+    <div fxFlex style="margin: 0 20px 0 20px">
+      <mat-card>
+        <mat-card-title>
+          <h5>Monthly Sales by Product</h5>
+        </mat-card-title>
+        <mat-card-content>
+          <app-line-chart></app-line-chart>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 </div>

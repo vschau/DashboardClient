@@ -8,3 +8,7 @@ body {
   /* background-color: #1C2228; */
   /* color: #f7fff7; */
 }
+
+.section-container {
+  margin: 30px;
+}

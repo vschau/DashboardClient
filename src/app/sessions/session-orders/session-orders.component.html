@@ -1,1 +1,38 @@
-<p>session-orders works!</p>
+<div class="section-container mat-elevation-z8">
+  <mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
+      <mat-cell *matCellDef="let order">{{order.id}}</mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="customer">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Customer</mat-header-cell>
+      <mat-cell *matCellDef="let order">{{order.customer.name}}</mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="total">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Amount</mat-header-cell>
+      <mat-cell *matCellDef="let order">{{order.total}}</mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="placed">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Order Placed</mat-header-cell>
+      <mat-cell *matCellDef="let order">{{order.placed  | date: 'short'}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="fulfilled">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Order Fulfilled</mat-header-cell>
+      <mat-cell *matCellDef="let order">{{order.fulfilled  | date: 'short'}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
+      <mat-cell *matCellDef="let order">Status</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

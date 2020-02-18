@@ -1,0 +1,14 @@
+<!--style="padding:0" helps color title and footer-->
+<mat-card class="card-block" fxLayout="column inline" fxLayoutAlign="start" style="padding:0"
+    [ngStyle]="{'background-color': color}">
+  <mat-card-title class="card-title">
+    {{ server.name }}
+  </mat-card-title>
+  <mat-card-content class="card-content">
+    {{ serverStatus }}
+  </mat-card-content>
+
+  <mat-card-footer class="card-footer">
+    <button mat-button class="card-button" (click)="toggleStatus()">{{ buttonText }}</button>
+  </mat-card-footer>
+</mat-card>
