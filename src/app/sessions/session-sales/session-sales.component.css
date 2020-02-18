@@ -1,5 +1,6 @@
-mat-grid-tile {
-  background-color: lightblue;
+mat-card {
+  padding-top: 1px;
+  margin-top: 20px;
 }
 /* mat-card {
   width: 100%;

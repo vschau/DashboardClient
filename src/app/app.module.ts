@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { ChartsModule } from 'ng2-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatToolbarModule, MatSidenavModule, MatGridListModule, MatListModule, MatCardModule, MatIconModule } from '@angular/material';
+import { MatToolbarModule, MatSidenavModule, MatGridListModule, MatListModule, MatCardModule,
+         MatButtonModule, MatIconModule } from '@angular/material';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -40,8 +41,8 @@ import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
     MatGridListModule,
     MatListModule,
     MatCardModule,
+    MatButtonModule,
     MatIconModule
-    // MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
