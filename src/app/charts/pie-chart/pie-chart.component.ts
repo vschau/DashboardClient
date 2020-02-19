@@ -10,7 +10,8 @@ import { THEME_COLORS } from 'src/app/shared/constants';
 })
 export class PieChartComponent implements OnInit {
   public pieChartOptions: ChartOptions = {
-    responsive: true,
+    responsive: false,
+    maintainAspectRatio: false,
     legend: {
       position: 'top',
     }

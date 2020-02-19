@@ -9,6 +9,10 @@ body {
   /* color: #f7fff7; */
 }
 
+h5 {
+  margin: 10px auto;
+}
+
 .section-container {
   margin: 30px;
 }

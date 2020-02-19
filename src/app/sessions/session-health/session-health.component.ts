@@ -40,7 +40,7 @@ export class SessionHealthComponent implements OnInit, OnDestroy {
   }
 
   // The type of $event here is whatever the child sent
-  onServerStatusChanged(request: IServerRequest) {
+  onServerStatusChange(request: IServerRequest) {
     this.serverService.updateServerStatus(request)
         .pipe(takeUntil(this.ngUnsubscribe))
         .subscribe(

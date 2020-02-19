@@ -5,7 +5,7 @@
     <div
         *ngFor="let server of servers"
         fxFlex.lg="calc(25% - 16px)" fxFlex.lt-lg="calc(50% - 16px)" fxFlex.xs="calc(100% - 16px)">
-      <app-server [server]="server" (serverStatusChanged)="onServerStatusChanged($event)"></app-server>
+      <app-server [server]="server" (serverStatusChange)="onServerStatusChange($event)"></app-server>
     </div>
   </div>
 </div>

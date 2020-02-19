@@ -14,7 +14,7 @@ export class ServerComponent implements OnInit, OnChanges {
   iterableDiffer: any;
 
   @Input() server: IServer;
-  @Output() serverStatusChanged = new EventEmitter<IServerRequest>();
+  @Output() serverStatusChange = new EventEmitter<IServerRequest>();
 
   constructor() {
   }
@@ -45,7 +45,7 @@ export class ServerComponent implements OnInit, OnChanges {
 
   toggleStatus() {
     const payload = this.buildPayload(this.server.isOnline);
-    this.serverStatusChanged.emit(payload);
+    this.serverStatusChange.emit(payload);
   }
 
   buildPayload(isOnline: boolean): IServerRequest {
