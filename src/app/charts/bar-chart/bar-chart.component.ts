@@ -37,7 +37,7 @@ export class BarChartComponent implements OnInit, OnDestroy {
   public barChartLegend = true;
 
   paginationQuery: IPaginationQuery = { pageNumber: 1, pageSize: 100 };
-  subscription = new Subscription();
+  private subscription = new Subscription();
 
   // public barChartData: ChartDataSets[] = [
   //   { data: [65, 59, 80, 81, 56, 55, 40], label: 'Q3 Sales' },

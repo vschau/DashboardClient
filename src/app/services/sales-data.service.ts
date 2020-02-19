@@ -11,24 +11,22 @@ import { IPaginationQuery } from '../models/IPaginationQuery';
 })
 export class SalesDataService {
   baseUrl = 'https://localhost:44391/api/orders';
-  httpOptions: any = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-    })
-  };
 
   constructor(private httpClient: HttpClient) {}
 
   getOrders(paginationQuery: IPaginationQuery): Observable<any> {
-    console.log('get orders');
     return this.httpClient.get(`${this.baseUrl}?PageNumber=${paginationQuery.pageNumber}&PageSize=${paginationQuery.pageSize}`)
         .pipe(catchError(this.handleError));
   }
 
-  getOrdersGrpByCustomer(n: number) {
+  getOrdersByCustomer(n: number): Observable<any> {
+    return this.httpClient.get(`${this.baseUrl}/bycustomer?n=${n}`)
+        .pipe(catchError(this.handleError));
   }
 
-  getOrdersGrpByState() {
+  getOrdersByState(): Observable<any> {
+    return this.httpClient.get(`${this.baseUrl}/bystate`)
+        .pipe(catchError(this.handleError));
   }
 
   private handleError(errorResponse: HttpErrorResponse) {

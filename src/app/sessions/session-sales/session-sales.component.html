@@ -18,7 +18,7 @@
               <h5>Orders by Customer</h5>
             </mat-card-title>
             <mat-card-content>
-              <app-pie-chart></app-pie-chart>
+              <app-pie-chart *ngIf='salesDataByCustomer' [saleData]='salesDataByCustomer'></app-pie-chart>
             </mat-card-content>
           </mat-card>
         </div>
@@ -28,7 +28,7 @@
               <h5>Orders by State</h5>
             </mat-card-title>
             <mat-card-content>
-              <app-pie-chart></app-pie-chart>
+              <app-pie-chart *ngIf='salesDataByState' [saleData]='salesDataByState'></app-pie-chart>
             </mat-card-content>
           </mat-card>
         </div>

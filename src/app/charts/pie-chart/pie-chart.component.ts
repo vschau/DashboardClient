@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ChartType, ChartOptions } from 'chart.js';
 import { Label } from 'ng2-charts';
 import { THEME_COLORS } from 'src/app/shared/constants';
@@ -10,14 +10,16 @@ import { THEME_COLORS } from 'src/app/shared/constants';
 })
 export class PieChartComponent implements OnInit {
   public pieChartOptions: ChartOptions = {
-    responsive: false,
+    responsive: true,
     maintainAspectRatio: false,
     legend: {
       position: 'top',
     }
   };
-  public pieChartLabels: Label[] = ['XYZ Logistics', 'Main St Bakery', 'Acme Hosting'];
-  public pieChartData: number[] = [300, 500, 100];
+  // public pieChartLabels: Label[] = ['XYZ Logistics', 'Main St Bakery', 'Acme Hosting'];
+  public pieChartLabels: Label[];
+  // public pieChartData: number[] = [300, 500, 100];
+  public pieChartData: number[];
   public pieChartType: ChartType = 'doughnut';
   public pieChartLegend = true;
 
@@ -28,9 +30,17 @@ export class PieChartComponent implements OnInit {
     },
   ];
 
+  @Input() saleData: any;
+
   constructor() { }
 
   ngOnInit() {
+    console.log(this.saleData);
+    // console.log('test', this.saleData.map(d => Object.values(d)[0]));
+
+    // we may pass in saleData {State, Total} or {Name, Total} so we can't do d => d.State or d => d.Name
+    this.pieChartLabels = this.saleData.map(d => Object.values(d)[0]);
+    this.pieChartData = this.saleData.map(d => Object.values(d)[1]);
   }
 
   themeColors(setName: string): string[] {
