@@ -35,9 +35,6 @@ export class PieChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.saleData);
-    // console.log('test', this.saleData.map(d => Object.values(d)[0]));
-
     // we may pass in saleData {State, Total} or {Name, Total} so we can't do d => d.State or d => d.Name
     this.pieChartLabels = this.saleData.map(d => Object.values(d)[0]);
     this.pieChartData = this.saleData.map(d => Object.values(d)[1]);

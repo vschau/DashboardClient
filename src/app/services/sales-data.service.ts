@@ -20,7 +20,7 @@ export class SalesDataService {
   }
 
   getOrdersByCustomer(n: number): Observable<any> {
-    return this.httpClient.get(`${this.baseUrl}/bycustomer?n=${n}`)
+    return this.httpClient.get(`${this.baseUrl}/bycustomer/${n}`)
         .pipe(catchError(this.handleError));
   }
 
