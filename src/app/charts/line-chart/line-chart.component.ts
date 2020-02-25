@@ -91,7 +91,7 @@ export class LineChartComponent implements OnInit, OnDestroy {
   public lineChartLegend = true;
   public lineChartType = 'line';
 
-  paginationQuery: IPaginationQuery = { pageNumber: 1, pageSize: 100 };
+  paginationQuery: IPaginationQuery = {  sortColumn: 'id', sortDirection: 'asc', pageIndex: 1, pageSize: 100 };
   private ngUnsubscribe = new Subject();
 
   constructor(private salesDataService: SalesDataService) { }
@@ -105,10 +105,10 @@ export class LineChartComponent implements OnInit, OnDestroy {
     this.salesDataService.getOrders(this.paginationQuery).pipe(takeUntil(this.ngUnsubscribe)).subscribe(
       res => {
         const orders = res.data;
-        console.log('orders', res.data);
+        // console.log('orders', res.data);
 
         this.salesDataService.getOrdersByCustomer(3).subscribe((cus) => {
-            console.log('customers', cus);
+            // console.log('customers', cus);
 
             const customerDic = cus.reduce((r, a) => {
               r[a.customerId] = a.name;
@@ -150,7 +150,7 @@ export class LineChartComponent implements OnInit, OnDestroy {
               result[2].data.push(item[customerIds[2]]);
             });
 
-            console.log('data', result);
+            // console.log('data', result);
             this.lineChartData = result;
           },
           (e) => console.log('error', e)

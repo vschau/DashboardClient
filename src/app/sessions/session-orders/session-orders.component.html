@@ -1,13 +1,13 @@
 <div class="section-container mat-elevation-z8">
-  <mat-table [dataSource]="dataSource" matSort>
+  <mat-table [dataSource]="dataSource" matSort matSortActive="id" matSortDirection="asc" matSortDisableClear>
     <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
       <mat-cell *matCellDef="let order">{{order.id}}</mat-cell>
     </ng-container>
   
-    <ng-container matColumnDef="customer">
+    <ng-container matColumnDef="customerName">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Customer</mat-header-cell>
-      <mat-cell *matCellDef="let order">{{order.customer.name}}</mat-cell>
+      <mat-cell *matCellDef="let order">{{order.customerName}}</mat-cell>
     </ng-container>
   
     <ng-container matColumnDef="total">
@@ -20,9 +20,9 @@
       <mat-cell *matCellDef="let order">{{order.placed  | date: 'short'}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="fulfilled">
+    <ng-container matColumnDef="completed">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Order Fulfilled</mat-header-cell>
-      <mat-cell *matCellDef="let order">{{order.fulfilled  | date: 'short'}}</mat-cell>
+      <mat-cell *matCellDef="let order">{{order.completed  | date: 'short'}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="status">
@@ -34,5 +34,5 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
 </div>

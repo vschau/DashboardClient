@@ -2,3 +2,13 @@ table {
   width: 80%;
   margin: 20px auto;
 }
+
+.mat-header-cell .mat-sort-header-sorted {
+  color: #0A0A0A;
+}
+
+/* If wanting to always show arrows */
+/* ::ng-deep .mat-sort-header-container:not(.mat-sort-header-sorted) .mat-sort-header-arrow {
+  opacity: 0.54 !important;
+  transform: translateY(0px) !important;
+} */

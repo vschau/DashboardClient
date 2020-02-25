@@ -36,7 +36,7 @@ export class BarChartComponent implements OnInit, OnDestroy {
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
 
-  paginationQuery: IPaginationQuery = { pageNumber: 1, pageSize: 100 };
+  paginationQuery: IPaginationQuery = {  sortColumn: 'id', sortDirection: 'asc', pageIndex: 1, pageSize: 100 };
   private subscription = new Subscription();
 
   // public barChartData: ChartDataSets[] = [

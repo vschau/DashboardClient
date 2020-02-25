@@ -1,4 +1,6 @@
 export interface IPaginationQuery {
-  pageNumber: number;
+  sortColumn: string;
+  sortDirection: string;
+  pageIndex: number;
   pageSize: number;
 }

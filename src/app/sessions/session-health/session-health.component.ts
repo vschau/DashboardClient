@@ -12,6 +12,7 @@ const SAMPLE_SERVER: IServer[] = [
   // { id: 4, name: 'prod', isOnline: true },
 ];
 
+// TODO: make another one with route resolver
 @Component({
   selector: 'app-session-health',
   templateUrl: './session-health.component.html',
@@ -32,7 +33,7 @@ export class SessionHealthComponent implements OnInit, OnDestroy {
         .pipe(takeUntil(this.ngUnsubscribe))
         .subscribe(
           (res) => {
-            console.log(res);
+            // console.log(res);
             this.servers = res;
           },
           (err) => console.log(err)
