@@ -1,11 +1,15 @@
 <div class="bar-chart">
   <canvas baseChart
-    *ngIf="barChartData && barChartData.length > 0"
-    height="100vh"
-    [datasets]="barChartData"
-    [labels]="barChartLabels"
-    [options]="barChartOptions"
-    [legend]="barChartLegend"
-    [chartType]="barChartType">
+      *ngIf="barChartData && barChartData.length > 0"
+      height="100vh"
+      [datasets]="barChartData"
+      [labels]="barChartLabels"
+      [options]="barChartOptions"
+      [legend]="barChartLegend"
+      [chartType]="barChartType">
   </canvas>
+
+  <div fxLayout fxLayoutAlign="center center">
+    <mat-spinner *ngIf='!barChartData'></mat-spinner>
+  </div>
 </div>

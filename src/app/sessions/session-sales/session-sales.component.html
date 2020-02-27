@@ -19,6 +19,9 @@
             </mat-card-title>
             <mat-card-content>
               <app-pie-chart *ngIf='salesDataByCustomer' [saleData]='salesDataByCustomer'></app-pie-chart>
+              <div fxLayout fxLayoutAlign="center center">
+                <mat-spinner *ngIf='!salesDataByCustomer'></mat-spinner>
+              </div>
             </mat-card-content>
           </mat-card>
         </div>
@@ -29,6 +32,9 @@
             </mat-card-title>
             <mat-card-content>
               <app-pie-chart *ngIf='salesDataByState' [saleData]='salesDataByState'></app-pie-chart>
+              <div fxLayout fxLayoutAlign="center center">
+                <mat-spinner *ngIf='!salesDataByState'></mat-spinner>
+              </div>
             </mat-card-content>
           </mat-card>
         </div>

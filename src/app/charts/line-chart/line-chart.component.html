@@ -6,5 +6,10 @@
       [options]="lineChartOptions"
       [colors]="lineChartColors"
       [legend]="lineChartLegend"
-      [chartType]="lineChartType"></canvas>
+      [chartType]="lineChartType">
+  </canvas>
+
+  <div fxFlex fxLayoutAlign="center center">
+    <mat-spinner *ngIf='!lineChartData'></mat-spinner>
+  </div>
 </div>

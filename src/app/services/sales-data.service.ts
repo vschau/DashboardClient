@@ -32,12 +32,12 @@ export class SalesDataService {
 
   getOrdersByCustomer(n: number): Observable<any> {
     return this.httpClient.get(`${this.baseUrl}/bycustomer/${n}`)
-        .pipe(catchError(this.handleError));
+        .pipe(delay(1000), catchError(this.handleError));
   }
 
   getOrdersByState(): Observable<any> {
     return this.httpClient.get(`${this.baseUrl}/bystate`)
-        .pipe(catchError(this.handleError));
+        .pipe(delay(1000), catchError(this.handleError));
   }
 
   private handleError(errorResponse: HttpErrorResponse) {
