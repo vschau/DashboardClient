@@ -16,3 +16,9 @@ h5 {
 .section-container {
   margin: 30px;
 }
+
+.spinner {
+  top: 45%;
+  left: 50%;
+  position: absolute;
+}

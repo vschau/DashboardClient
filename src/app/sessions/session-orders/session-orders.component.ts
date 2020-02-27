@@ -13,7 +13,7 @@ import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
   styleUrls: ['./session-orders.component.css']
 })
 export class SessionOrdersComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['id', 'customerName', 'total', 'placed', 'completed', 'status'];
+  displayedColumns: string[] = ['id', 'customerName', 'total', 'placed', 'completed'];
   // MatDataSource is for sorting, filtering and pagination of a client-sided array. Can't use this.
   // Follow this instead: https://blog.angular-university.io/angular-material-data-table/
   dataSource: SalesDataSource;

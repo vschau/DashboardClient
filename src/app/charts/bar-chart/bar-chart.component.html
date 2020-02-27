@@ -9,7 +9,7 @@
       [chartType]="barChartType">
   </canvas>
 
-  <div fxLayout fxLayoutAlign="center center">
-    <mat-spinner *ngIf='!barChartData'></mat-spinner>
+  <div fxFlex fxLayoutAlign="center center" *ngIf='!barChartData'>
+    <mat-spinner></mat-spinner>
   </div>
 </div>

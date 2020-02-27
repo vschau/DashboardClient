@@ -1,57 +1,55 @@
-<div>
-  <div fxLayout="column" fxFlexFill fxLayoutGap="20px grid">
-    <div fxFlex style="margin: 0 20px 0 20px">
-      <div fxLayout fxLayout.lt-md="column" fxLayoutAlign="center" fxLayoutGap="20px grid" fxLayoutWrap="wrap">
-        <div fxFlex="33.33" fxFlex.lt-md="1">
-          <mat-card>
-            <mat-card-title>
-              <h5>Daily Orders</h5>
-            </mat-card-title>
-            <mat-card-content>
-              <app-bar-chart></app-bar-chart>
-            </mat-card-content>
-          </mat-card>
-        </div>
-        <div fxFlex="33.33" fxFlex.lt-md="1">
-          <mat-card>
-            <mat-card-title>
-              <h5>Orders by Customer</h5>
-            </mat-card-title>
-            <mat-card-content>
-              <app-pie-chart *ngIf='salesDataByCustomer' [saleData]='salesDataByCustomer'></app-pie-chart>
-              <div fxLayout fxLayoutAlign="center center">
-                <mat-spinner *ngIf='!salesDataByCustomer'></mat-spinner>
-              </div>
-            </mat-card-content>
-          </mat-card>
-        </div>
-        <div fxFlex="33.33" fxFlex.lt-md="1">
-          <mat-card>
-            <mat-card-title>
-              <h5>Orders by State</h5>
-            </mat-card-title>
-            <mat-card-content>
-              <app-pie-chart *ngIf='salesDataByState' [saleData]='salesDataByState'></app-pie-chart>
-              <div fxLayout fxLayoutAlign="center center">
-                <mat-spinner *ngIf='!salesDataByState'></mat-spinner>
-              </div>
-            </mat-card-content>
-          </mat-card>
-        </div>
+<div fxLayout="column" fxFlexFill fxLayoutGap="20px grid">
+  <div fxFlex style="margin: 0 20px 0 20px">
+    <div fxLayout fxLayout.lt-md="column" fxLayoutAlign="center" fxLayoutGap="20px grid" fxLayoutWrap="wrap">
+      <div fxFlex="33.33" fxFlex.lt-md="1">
+        <mat-card>
+          <mat-card-title>
+            <h5>Daily Orders</h5>
+          </mat-card-title>
+          <mat-card-content>
+            <app-bar-chart></app-bar-chart>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div fxFlex="33.33" fxFlex.lt-md="1">
+        <mat-card>
+          <mat-card-title>
+            <h5>Orders by Customer</h5>
+          </mat-card-title>
+          <mat-card-content>
+            <app-pie-chart *ngIf='salesDataByCustomer' [saleData]='salesDataByCustomer' [limit]='3'></app-pie-chart>
+            <div fxLayout fxLayoutAlign="center center" *ngIf='!salesDataByCustomer'>
+              <mat-spinner></mat-spinner>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div fxFlex="33.33" fxFlex.lt-md="1">
+        <mat-card>
+          <mat-card-title>
+            <h5>Orders by State</h5>
+          </mat-card-title>
+          <mat-card-content>
+            <app-pie-chart *ngIf='salesDataByState' [saleData]='salesDataByState' [limit]='5'></app-pie-chart>
+            <div fxLayout fxLayoutAlign="center center" *ngIf='!salesDataByState'>
+              <mat-spinner></mat-spinner>
+            </div>
+          </mat-card-content>
+        </mat-card>
       </div>
     </div>
-  
-    <!-- <mat-divider></mat-divider> -->
-  
-    <div fxFlex style="margin: 0 20px 0 20px">
-      <mat-card>
-        <mat-card-title>
-          <h5>Top 3 Customer Sales</h5>
-        </mat-card-title>
-        <mat-card-content>
-          <app-line-chart></app-line-chart>
-        </mat-card-content>
-      </mat-card>
-    </div>
+  </div>
+
+  <!-- <mat-divider></mat-divider> -->
+
+  <div fxFlex style="margin: 0 20px 0 20px">
+    <mat-card>
+      <mat-card-title>
+        <h5>Top 3 Customer Sales</h5>
+      </mat-card-title>
+      <mat-card-content>
+        <app-line-chart></app-line-chart>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>

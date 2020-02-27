@@ -9,7 +9,7 @@
       [chartType]="lineChartType">
   </canvas>
 
-  <div fxFlex fxLayoutAlign="center center">
-    <mat-spinner *ngIf='!lineChartData'></mat-spinner>
+  <div fxFlex fxLayoutAlign="center center" *ngIf='!lineChartData'>
+    <mat-spinner></mat-spinner>
   </div>
 </div>

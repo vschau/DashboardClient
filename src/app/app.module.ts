@@ -11,9 +11,11 @@ import { MatToolbarModule, MatSidenavModule, MatGridListModule, MatListModule, M
          MatButtonModule, MatIconModule, MatTableModule, MatPaginatorModule, MatSortModule,
          MatFormFieldModule, MatInputModule, MatProgressSpinnerModule } from '@angular/material';
 
+import { ServerResolver } from './services/server.resolver';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SessionHealthComponent } from './sessions/session-health/session-health.component';
+import { SessionHealth2Component } from './sessions/session-health/session-health2.component';
 import { SessionOrdersComponent } from './sessions/session-orders/session-orders.component';
 import { SessionSalesComponent } from './sessions/session-sales/session-sales.component';
 import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
@@ -27,6 +29,7 @@ import { ServerComponent } from './server/server.component';
     NavbarComponent,
     SidebarComponent,
     SessionHealthComponent,
+    SessionHealth2Component,
     SessionOrdersComponent,
     SessionSalesComponent,
     BarChartComponent,
@@ -55,7 +58,9 @@ import { ServerComponent } from './server/server.component';
     MatInputModule,
     MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [
+    ServerResolver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

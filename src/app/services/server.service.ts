@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, delay } from 'rxjs/operators';
 
 import { IServer } from '../models/IServer';
 import { IServerRequest } from '../models/IServerRequest';
@@ -22,7 +22,7 @@ export class ServerService {
 
   getServers(): Observable<IServer[]> {
     return this.httpClient.get<IServer[]>(this.baseUrl)
-        .pipe(catchError(this.handleError));
+        .pipe(delay(500), catchError(this.handleError));
   }
 
   updateServerStatus(request: IServerRequest): Observable<Response> {
