@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { MatSort, MatTableDataSource, MatPaginator } from '@angular/material';
 import { IOrder } from 'src/app/models/IOrder';
 import { SalesDataService } from 'src/app/services/sales-data.service';
@@ -18,12 +18,12 @@ export class SessionOrdersComponent implements OnInit, AfterViewInit {
   // Follow this instead: https://blog.angular-university.io/angular-material-data-table/
   dataSource: SalesDataSource;
 
-  // TODO: implement filter
   // todo: separate count as a different api call?
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild('input') input: ElementRef;
 
-  private paginationQuery: IPaginationQuery = { sortColumn: 'id', sortDirection: 'asc', pageIndex: 1, pageSize: 5 };
+  private paginationQuery: IPaginationQuery = { filter: '', sortColumn: 'id', sortDirection: 'asc', pageIndex: 1, pageSize: 5 };
 
   constructor(private salesDataService: SalesDataService) { }
 
@@ -44,17 +44,17 @@ export class SessionOrdersComponent implements OnInit, AfterViewInit {
     this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
 
     // filter
-    // fromEvent(this.input.nativeElement, 'keyup')
-    //   .pipe(
-    //     debounceTime(150),
-    //     distinctUntilChanged(),
-    //     tap(() => {
-    //       this.paginator.pageIndex = 0;
+    fromEvent(this.input.nativeElement, 'keyup')
+      .pipe(
+        debounceTime(500),
+        distinctUntilChanged(),
+        tap(() => {
+          this.paginator.pageIndex = 0;
 
-    //       this.loadOrdersPage();
-    //     })
-    //   )
-    //   .subscribe();
+          this.loadOrdersPage();
+        })
+      )
+      .subscribe();
 
     merge(this.sort.sortChange, this.paginator.page)
       .pipe(
@@ -65,6 +65,7 @@ export class SessionOrdersComponent implements OnInit, AfterViewInit {
   }
 
   loadOrdersPage() {
+    this.paginationQuery.filter = this.input.nativeElement.value;
     this.paginationQuery.sortColumn = this.sort.active;
     this.paginationQuery.sortDirection = this.sort.direction;
     this.paginationQuery.pageIndex = this.paginator.pageIndex + 1; // paginator starts at 0 pageIndex

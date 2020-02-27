@@ -91,7 +91,7 @@ export class LineChartComponent implements OnInit, OnDestroy {
   public lineChartLegend = true;
   public lineChartType = 'line';
 
-  paginationQuery: IPaginationQuery = {  sortColumn: 'id', sortDirection: 'asc', pageIndex: 1, pageSize: 100 };
+  paginationQuery: IPaginationQuery = {  filter: '', sortColumn: 'id', sortDirection: 'asc', pageIndex: 1, pageSize: 100 };
   private ngUnsubscribe = new Subject();
 
   constructor(private salesDataService: SalesDataService) { }

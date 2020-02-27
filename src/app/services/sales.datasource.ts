@@ -26,7 +26,6 @@ export class SalesDataSource extends DataSource<ICustomerOrderResponse> {
         finalize(() => this.loadingSubject.next(false))
       )
       .subscribe(res => {
-        console.log(res.totalPages)
         this.dataSubject.next(res.data);
         this.countSubject.next(res.totalCount);
       });

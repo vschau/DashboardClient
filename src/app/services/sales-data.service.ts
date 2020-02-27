@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { IOrder } from '../models/IOrder';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, delay } from 'rxjs/operators';
 import { IPaginationQuery } from '../models/IPaginationQuery';
 
 
@@ -22,11 +22,12 @@ export class SalesDataService {
   getOrders(paginationQuery: IPaginationQuery): Observable<any> {
     return this.httpClient.get(`${this.baseUrl}`, {
         params: new HttpParams()
+          .set('filter', paginationQuery.filter)
           .set('sortColumn', paginationQuery.sortColumn)
           .set('sortDirection', paginationQuery.sortDirection)
           .set('pageIndex', paginationQuery.pageIndex.toString())
           .set('pageSize', paginationQuery.pageSize.toString())
-    }).pipe(catchError(this.handleError));
+    }).pipe(delay(1000), catchError(this.handleError));
   }
 
   getOrdersByCustomer(n: number): Observable<any> {

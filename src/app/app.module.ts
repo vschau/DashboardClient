@@ -8,7 +8,8 @@ import { ChartsModule } from 'ng2-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule, MatSidenavModule, MatGridListModule, MatListModule, MatCardModule,
-         MatButtonModule, MatIconModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+         MatButtonModule, MatIconModule, MatTableModule, MatPaginatorModule, MatSortModule,
+         MatFormFieldModule, MatInputModule, MatProgressSpinnerModule } from '@angular/material';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -49,7 +50,10 @@ import { ServerComponent } from './server/server.component';
     MatIconModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
