@@ -10,7 +10,7 @@ import { IServer } from '../models/IServer';
 export class ServerComponent implements OnInit, OnChanges {
   color: string;
   buttonText: string;
-  serverStatus: string; // Use this to translate server.isOnline from bool to string
+  serverStatus: string;
   iterableDiffer: any;
 
   @Input() server: IServer;

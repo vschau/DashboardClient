@@ -16,9 +16,7 @@ export class PieChartComponent implements OnInit {
       position: 'top',
     }
   };
-  // public pieChartLabels: Label[] = ['XYZ Logistics', 'Main St Bakery', 'Acme Hosting'];
   public pieChartLabels: Label[];
-  // public pieChartData: number[] = [300, 500, 100];
   public pieChartData: number[];
   public pieChartType: ChartType = 'doughnut';
   public pieChartLegend = true;
@@ -36,7 +34,6 @@ export class PieChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // we may pass in saleData {State, Total} or {Name, Total} so we can't do d => d.State or d => d.Name
     const subsetSaleData = this.saleData.slice(0, this.limit);
     this.pieChartLabels = subsetSaleData.map(d => Object.values(d)[0]);
     this.pieChartData = subsetSaleData.map(d => Object.values(d)[1]);

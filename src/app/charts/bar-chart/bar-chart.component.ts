@@ -31,7 +31,6 @@ export class BarChartComponent implements OnInit, OnDestroy {
       }]
     }
   };
-  // public barChartLabels: Label[] = ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7'];
   public barChartLabels: Label[];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
@@ -39,10 +38,6 @@ export class BarChartComponent implements OnInit, OnDestroy {
   paginationQuery: IPaginationQuery = {  filter: '', sortColumn: 'id', sortDirection: 'asc', pageIndex: 1, pageSize: 100 };
   private subscription = new Subscription();
 
-  // public barChartData: ChartDataSets[] = [
-  //   { data: [65, 59, 80, 81, 56, 55, 40], label: 'Q3 Sales' },
-  //   { data: [28, 48, 40, 19, 86, 27, 90], label: 'Q4 Sales' }
-  // ];
   public barChartData: ChartDataSets[];
 
   constructor(private salesDataService: SalesDataService) { }

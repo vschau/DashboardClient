@@ -14,13 +14,7 @@ import * as moment from 'moment';
 })
 export class LineChartComponent implements OnInit, OnDestroy {
   // Display top 3 customers by sale volume.  A series for each customer that maps their order by day over some day range
-  // public lineChartData: ChartDataSets[] = [
-  //   { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-  //   { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' },
-  //   { data: [180, 480, 770, 90, 1000, 270, 400], label: 'Series C', yAxisID: 'y-axis-1' }
-  // ];
   public lineChartData: ChartDataSets[];
-  // public lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
   public lineChartLabels: Label[] = [];
   public lineChartOptions: (ChartOptions & { annotation: any }) = {
     responsive: true,
@@ -101,14 +95,11 @@ export class LineChartComponent implements OnInit, OnDestroy {
   }
 
   getOrders() {
-    // const dates = filteredOrders.map(x => x.placed).filter((value, index, self) => self.indexOf(value) === index).sort();
     this.salesDataService.getOrders(this.paginationQuery).pipe(takeUntil(this.ngUnsubscribe)).subscribe(
       res => {
         const orders = res.data;
-        // console.log('orders', res.data);
 
         this.salesDataService.getOrdersByCustomer(3).subscribe((cus) => {
-            // console.log('customers', cus);
 
             const customerDic = cus.reduce((r, a) => {
               r[a.customerId] = a.name;
@@ -150,7 +141,6 @@ export class LineChartComponent implements OnInit, OnDestroy {
               result[2].data.push(item[customerIds[2]]);
             });
 
-            // console.log('data', result);
             this.lineChartData = result;
           },
           (e) => console.log('error', e)
